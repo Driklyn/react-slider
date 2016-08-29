@@ -353,7 +353,7 @@
       for (var i = 0; i < l; i++) {
         var offset = this._calcOffset(value[i]);
         var dist = Math.abs(pixelOffset - offset);
-        if (dist < minDist) {
+        if (dist < minDist || (dist === minDist && pixelOffset > offset)) {
           minDist = dist;
           closestIndex = i;
         }
